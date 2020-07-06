@@ -1,0 +1,29 @@
+$purple : #CB5492;
+
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  padding: 0 15px;
+}
+
+.btn{
+  background: $purple;
+  display: inline-block;
+  border-radius: 50px;
+  padding: 12px 30px;
+
+  font-family: 'Nunito', Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: .85;
+  color: white;
+  text-align: center;
+  border: 4px transparent;
+  text-transform: uppercase;
+
+  &.btn--big{
+
+  }
+}
