@@ -1,11 +1,11 @@
 <template>
-    <div class="home">
-        <transition name="fade">
-            <img alt="Vue logo" src="../assets/logo.png">
-        </transition>
+    <div class="loading">
+        <img alt="Vue logo" src="../assets/logo.png">
+        <h1>Drinking<br>Roulette</h1>
 
-        <Loader color="black" size="80px"/>
+        <Loader class="loader" color="#45484B" size="80px"/>
 
+        <p>Please drink with moderation</p>
     </div>
 </template>
 
@@ -18,18 +18,43 @@
             Loader
         },
         created() {
-            // setTimeout(() => this.$router.push({ path: '/about' }), 2000)
+            setTimeout(() => this.$router.push({ path: '/about' }), 2000)
         }
     }
 </script>
 
-<style>
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s;
+<style scoped>
+
+    img{
+        margin-top: 60px;
+        width: 200px;
     }
 
-    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-    {
-        opacity: 0;
+    h1{
+        margin-top: 20px;
+        margin-bottom: 60px;
+        font-weight: 300;
+        font-size: 64px;
+        line-height: 0.85;
+        color: #45484B;
+        text-shadow: #00000026;
+    }
+
+    p{
+        color: #63676b;
+    }
+
+    .loader{
+        margin-bottom: 40px;
+    }
+
+    .loading{
+        text-align: center;
+
+        min-height: 100vh;
+
+        background-image: url("../assets/wavelayer.png");
+        background-position: bottom;
+        background-repeat: no-repeat;
     }
 </style>

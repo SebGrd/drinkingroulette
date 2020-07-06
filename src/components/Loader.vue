@@ -26,8 +26,7 @@ export default {
     position: absolute;
     width: var(--loader-size);
     height: var(--loader-size);
-    margin: 8px;
-    border: 4px solid var(--loader-color);
+    border: 2px solid var(--loader-color);
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: var(--loader-color) transparent transparent transparent;
