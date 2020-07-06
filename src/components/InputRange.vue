@@ -55,7 +55,7 @@
         .custom-input {
             position: relative;
             width: 100%;
-            height: 40px;
+            height: 44px;
             box-sizing: content-box;
             border-radius: 40px;
             z-index: 1;
@@ -66,7 +66,7 @@
 
             input {
                 width: 100%;
-                height: 40px;
+                height: 44px;
                 border-radius: 40px;
                 margin: 0;
                 border: 2px solid transparent;

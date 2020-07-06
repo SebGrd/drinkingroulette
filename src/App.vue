@@ -25,6 +25,7 @@
         -moz-osx-font-smoothing: grayscale;
         color: #2c3239;
         min-height: 100vh;
+        overflow: hidden;
     }
 
     #nav {

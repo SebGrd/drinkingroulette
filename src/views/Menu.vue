@@ -9,16 +9,17 @@
                 <button class="btn">Choose softs</button>
             </div>
 
-            <label>Alcohol/Soft rate: {{alcoholRate}}/{{softRate}}</label>
-            <InputRange min="10" max="100" value="75"
-                        v-on:alcoholRateChange="updateAlcoholRate"
-                        v-on:softRateChange="updateSoftRate"
-            />
+            <label>Alcohol/Soft rate:</label>
+            <InputRange
+                    min="10" max="100" value="75"
+                    v-on:alcoholRateChange="updateAlcoholRate"
+                    v-on:softRateChange="updateSoftRate"/>
+            <div class="display-rate">
+                <span>{{alcoholRate}}%</span>
+                <span>{{softRate}}%</span>
+            </div>
 
-
-
-
-            <button class="btn btn--big">Play</button>
+            <button class="btn btn--big btn-play"></button>
         </div>
 
     </div>
@@ -35,7 +36,7 @@
             Header,
             InputRange
         },
-        data(){
+        data() {
             return {
                 alcoholRate: 0,
                 softRate: 0
@@ -57,25 +58,77 @@
 
 <style lang="scss" scoped>
 
-    Header{
+    Header {
         margin-bottom: 20px;
     }
 
-    .inner-menu{
+    .inner-menu {
         margin-bottom: 20px;
     }
 
-    label{
+    label {
         font-weight: 300;
         font-size: 20px;
         padding-left: 4px;
     }
-    button{
+
+    button {
         display: block;
         width: 100%;
         margin-bottom: 10px;
+        cursor: pointer;
+        outline: none;
     }
 
+    .display-rate {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .btn-play{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #cb5492;
+        outline: none;
+        cursor: pointer;
+        margin: 120px auto auto;
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: calc(50% + 15px);
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background: transparent;
+            border-top : 70px solid transparent;
+            border-bottom : 70px solid transparent;
+            border-left : 120px solid white;
+        }
+        &:after{
+            content: 'Play';
+            position: absolute;
+            top: 50%;
+            left: calc(50%);
+            transform: translate(-50%, -50%);
+            color: #CB5492;
+        }
+        &:active{
+            background: white;
+            box-shadow: inset 0 0 5px #cb5492;
+            transform: scale(0.95);
+            &:before{
+                border-left : 120px solid #CB5492;
+            }
+            &:after{
+                color: white;
+            }
+        }
+    }
 
 
 </style>
