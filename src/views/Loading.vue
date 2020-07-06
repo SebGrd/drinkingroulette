@@ -18,7 +18,7 @@
             Loader
         },
         created() {
-            setTimeout(() => this.$router.push({ path: '/about' }), 2000)
+            setTimeout(() => this.$router.push({ path: '/menu' }), 2000)
         }
     }
 </script>

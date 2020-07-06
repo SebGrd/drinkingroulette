@@ -3,7 +3,7 @@
         <div id="nav">
             <router-link to="/">Home</router-link>
             |
-            <router-link to="/about">Menu</router-link>
+            <router-link to="/menu">Menu</router-link>
         </div>
         <transition name="slide" mode="out-in">
             <router-view/>
@@ -58,5 +58,9 @@
     .slide-leave-active {
         transition: transform 0.25s ease;
         transform: translateX(-100vw);
+    }
+
+    .container{
+        padding: 0 15px;
     }
 </style>
