@@ -5,8 +5,8 @@
         <div class="container">
 
             <div class="inner-menu">
-                <button class="btn">Choose alcohols</button>
-                <button class="btn">Choose softs</button>
+                <router-link class="btn link" to="/">Choose alcohols</router-link>
+                <router-link class="btn link" to="/">Choose softs</router-link>
             </div>
 
             <label>Alcohol/Soft rate:</label>
@@ -48,8 +48,7 @@
             },
             updateSoftRate(rate) {
                 this.softRate = rate
-
-            }
+            },
         },
     }
 
@@ -72,12 +71,14 @@
         padding-left: 4px;
     }
 
-    button {
+
+    button, .link {
         display: block;
         width: 100%;
         margin-bottom: 10px;
         cursor: pointer;
         outline: none;
+        text-decoration: none;
     }
 
     .display-rate {
