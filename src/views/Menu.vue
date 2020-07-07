@@ -5,8 +5,12 @@
         <div class="container">
 
             <div class="inner-menu">
-                <router-link class="btn link" to="/">Choose alcohols</router-link>
-                <router-link class="btn link" to="/">Choose softs</router-link>
+                <router-link  class="btn link"
+                        :to="{name: 'DrinksSelection', params: { type: 'alcohols' } }">Choose alcohols
+                </router-link>
+                <router-link  class="btn link"
+                        :to="{name: 'DrinksSelection', params: { type: 'softs' } }">Choose softs
+                </router-link>
             </div>
 
             <label>Alcohol/Soft rate:</label>
@@ -87,7 +91,7 @@
         padding: 0 10px;
     }
 
-    .btn-play{
+    .btn-play {
         position: relative;
         width: 200px;
         height: 200px;
@@ -97,7 +101,7 @@
         cursor: pointer;
         margin: 120px auto auto;
 
-        &:before{
+        &:before {
             content: '';
             position: absolute;
             top: 50%;
@@ -106,11 +110,12 @@
             width: 0;
             height: 0;
             background: transparent;
-            border-top : 70px solid transparent;
-            border-bottom : 70px solid transparent;
-            border-left : 120px solid white;
+            border-top: 70px solid transparent;
+            border-bottom: 70px solid transparent;
+            border-left: 120px solid white;
         }
-        &:after{
+
+        &:after {
             content: 'Play';
             position: absolute;
             top: 50%;
@@ -118,14 +123,17 @@
             transform: translate(-50%, -50%);
             color: #CB5492;
         }
-        &:active{
+
+        &:active {
             background: white;
             box-shadow: inset 0 0 5px #cb5492;
             transform: scale(0.95);
-            &:before{
-                border-left : 120px solid #CB5492;
+
+            &:before {
+                border-left: 120px solid #CB5492;
             }
-            &:after{
+
+            &:after {
                 color: white;
             }
         }

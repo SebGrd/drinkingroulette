@@ -4,6 +4,8 @@
             <router-link to="/">Loading</router-link>
             |
             <router-link to="/menu">Menu</router-link>
+            |
+            <router-link to="/drinks-selection">Selection</router-link>
         </div>
         <transition name="slide" mode="out-in">
             <router-view/>
@@ -30,9 +32,9 @@
 
     #nav {
         position: fixed;
-        top: 0;
         left: 0;
         right: 0;
+        bottom: 0;
         text-align: center;
         background: rgba(0, 0, 0, 0.1);
 
