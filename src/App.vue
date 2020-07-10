@@ -8,56 +8,33 @@
             <router-link to="/drinks-selection">Selection</router-link>
         </div>
         <transition name="slide" mode="out-in">
-            <router-view/>
+            <router-view
+                    :softs="softs" :alcohols="alcohols"
+                    @save-alcohols="saveAlcohols"
+                    @save-softs="saveSofts"
+            />
         </transition>
     </div>
 </template>
 
 <script>
-    import uuid from 'uuid'
 
     export default {
         name: 'App',
         data() {
             return {
                 alcoholRate: 60,
-                softs:
-                    [{
-                        id: 0,
-                        name: 'Coca'
-                    }, {
-                        id: 1,
-                        name: 'Orangina'
-                    }, {
-                        id: 2,
-                        name: 'Jus d\'orange'
-                    }],
-                alcohol:
-                    [{
-                        id: 0,
-                        name: 'Vodka'
-                    }, {
-                        id: 1,
-                        name: 'Whisky'
-                    }, {
-                        id: 2,
-                        name: 'Get27'
-                    }, {
-                        id: 3,
-                        name: 'Rhum'
-                    }]
+                softs: [],
+                alcohols: []
             }
         },
         methods: {
-            addSoft: function (name) {
-                this.softs = [{id: uuid.v4(), name}, ...this.softs]
+            saveAlcohols: function (alcohols) {
+                this.alcohols = alcohols
             },
-            addAlcohol: function (name) {
-                this.softs = [{id: uuid.v4(), name}, ...this.alcohol]
+            saveSofts: function (softs) {
+                this.softs = softs
             }
-        },
-        mounted() {
-            console.log(this.softs)
         }
     }
 </script>

@@ -6,10 +6,10 @@
 
             <div class="inner-menu">
                 <router-link  class="btn link"
-                        :to="{name: 'DrinksSelection', params: { type: 'alcohols' } }">Choose alcohols
+                        :to="{name: 'DrinksSelection', params: { type: 'alcohol'} }">Choose alcohols
                 </router-link>
                 <router-link  class="btn link"
-                        :to="{name: 'DrinksSelection', params: { type: 'softs' } }">Choose softs
+                        :to="{name: 'DrinksSelection', params: { type: 'soft' } }">Choose softs
                 </router-link>
             </div>
 
@@ -40,6 +40,7 @@
             Header,
             InputRange
         },
+        props: ['softs', 'alcohols'],
         data() {
             return {
                 alcoholRate: 0,
