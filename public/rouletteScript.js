@@ -1,8 +1,5 @@
-
-
 var rouletteEl = document.getElementById('roulette')
 var options = rouletteEl.dataset.roulettelist.split(',')
-console.log(rouletteEl.dataset.roulettelist)
 
 var startAngle = 0;
 var arc = Math.PI / (options.length / 2);

@@ -32,10 +32,20 @@
         },
         methods: {
             saveAlcohols: function (alcohols) {
+                localStorage.alcohols = JSON.stringify(alcohols)
                 this.alcohols = alcohols
             },
             saveSofts: function (softs) {
+                localStorage.softs = JSON.stringify(softs)
                 this.softs = softs
+            }
+        },
+        mounted() {
+            if (localStorage.alcohols) {
+                this.alcohols = JSON.parse(localStorage.alcohols)
+            }
+            if (localStorage.softs) {
+                this.softs = JSON.parse(localStorage.softs)
             }
         }
     }
