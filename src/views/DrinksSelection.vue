@@ -14,7 +14,7 @@
                 <DrinkItem v-for="alcohol in alcoholsList" :key="alcohol.id" :drink="alcohol" />
             </ul>
 
-            <button @click="save">Save</button>
+            <button class="btn btn--big" @click="save">Save</button>
         </div>
 
 
@@ -68,6 +68,11 @@
 
 <style lang="scss" scoped>
 
+    h1{
+        text-align: center;
+        margin-top: 0;
+    }
+
     .add-drink{
         margin-bottom: 20px;
     }
@@ -76,6 +81,18 @@
         padding: 0;
         margin: 0;
         list-style: none;
+    }
+
+    button{
+        position: fixed;
+        right: 15px;
+        bottom: 20px;
+        left: 15px;
+        font-size: 36px;
+        font-weight: 400;
+        width: calc(100% - 30px);
+        box-shadow: 0 0 10px #cb5492;
+
     }
 
 </style>
