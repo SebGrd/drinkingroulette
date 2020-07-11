@@ -18,7 +18,10 @@
         props: ['softs', 'alcohols', 'alcoholRate'],
         computed: {
             rouletteList: function () {
-                return Array.from(this.softs, soft => soft.name)
+                let softs = Array.from(this.softs, soft => soft.name)
+                let alcohols =  Array.from(this.alcohols, alcohols => alcohols.name)
+                let alcoholRate = this.alcoholRate
+                return [...softs, ...alcohols]
             }
         },
         created() {
