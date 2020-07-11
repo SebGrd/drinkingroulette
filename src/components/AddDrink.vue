@@ -20,9 +20,11 @@
         },
         methods: {
             addDrink() {
-                if (this.type === 'alcohol') this.$emit('add-alcohol', this.name)
-                if (this.type === 'soft') this.$emit('add-soft', this.name)
-                this.name = ''
+                if (this.name !== '') {
+                    if (this.type === 'alcohol') this.$emit('add-alcohol', this.name)
+                    if (this.type === 'soft') this.$emit('add-soft', this.name)
+                    this.name = ''
+                }
             }
         }
     }
