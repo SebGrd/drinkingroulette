@@ -4,14 +4,14 @@
 
         <div class="container">
             <h1>{{pageTitle}}</h1>
-            <AddDrink :type="type" @add-alcohol="addAlcohol" @add-soft="addSoft"/>
+            <AddDrink class="add-drink" :type="type" @add-alcohol="addAlcohol" @add-soft="addSoft"/>
 
             <ul v-if="type === 'soft'">
-                <li v-for="soft in softsList" :key="soft.id">{{soft.name}}</li>
+                <DrinkItem v-for="soft in softsList" :key="soft.id" :drink="soft" />
             </ul>
 
             <ul v-if="type === 'alcohol'">
-                <li v-for="alcohol in alcoholsList" :key="alcohol.id">{{alcohol.name}}</li>
+                <DrinkItem v-for="alcohol in alcoholsList" :key="alcohol.id" :drink="alcohol" />
             </ul>
 
             <button @click="save">Save</button>
@@ -24,13 +24,15 @@
 <script>
     import Header from "../components/Header";
     import AddDrink from "../components/AddDrink";
+    import DrinkItem from "../components/DrinkItem";
     import * as uuid from "uuid";
 
     export default {
         name: "DrinksSelection",
         components: {
             Header,
-            AddDrink
+            AddDrink,
+            DrinkItem
         },
         props: ['type', 'alcohols', 'softs'],
         data() {
@@ -66,13 +68,14 @@
 
 <style lang="scss" scoped>
 
+    .add-drink{
+        margin-bottom: 20px;
+    }
+
     ul {
         padding: 0;
         margin: 0;
         list-style: none;
-        li {
-
-        }
     }
 
 </style>
