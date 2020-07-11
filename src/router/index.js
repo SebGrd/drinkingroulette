@@ -23,6 +23,12 @@ const routes = [
         name: 'DrinksSelection',
         props: true,
         component: () => import('../views/DrinksSelection.vue')
+    },
+    {
+        path: '/roulette',
+        name: 'Roulette',
+        props: true,
+        component: () => import('../views/Roulette.vue')
     }
 ]
 

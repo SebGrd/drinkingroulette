@@ -6,10 +6,12 @@
             <router-link to="/menu">Menu</router-link>
             |
             <router-link to="/drinks-selection">Selection</router-link>
+            |
+            <router-link to="/roulette">Roulette</router-link>
         </div>
         <transition name="slide" mode="out-in">
             <router-view
-                    :softs="softs" :alcohols="alcohols"
+                    :softs="softs" :alcohols="alcohols" :alcoholRate="alcoholRate"
                     @save-alcohols="saveAlcohols"
                     @save-softs="saveSofts"
             />
