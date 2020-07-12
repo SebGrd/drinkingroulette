@@ -42,6 +42,11 @@
                 softsList: []
             }
         },
+        created() {
+            if (!this.type){
+                this.$router.push({path: '/menu'})
+            }
+        },
         mounted() {
             this.alcoholsList = this.alcohols
             this.softsList = this.softs
