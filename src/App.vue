@@ -1,14 +1,14 @@
 <template>
     <div id="app">
-        <div id="nav">
-            <router-link to="/">Loading</router-link>
-            |
-            <router-link to="/menu">Menu</router-link>
-            |
-            <router-link to="/drinks-selection">Selection</router-link>
-            |
-            <router-link to="/roulette">Roulette</router-link>
-        </div>
+<!--        <div id="nav">-->
+<!--            <router-link to="/">Loading</router-link>-->
+<!--            |-->
+<!--            <router-link to="/menu">Menu</router-link>-->
+<!--            |-->
+<!--            <router-link to="/drinks-selection">Selection</router-link>-->
+<!--            |-->
+<!--            <router-link to="/roulette">Roulette</router-link>-->
+<!--        </div>-->
         <transition name="slide" mode="out-in">
             <router-view
                     :softs="softs" :alcohols="alcohols" :alcoholRate="alcoholRate"
