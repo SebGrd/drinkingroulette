@@ -23,7 +23,7 @@
                 <span>{{softRate}}%</span>
             </div>
 
-            <button class="btn btn--big btn-play"></button>
+            <button class="btn btn--big btn-play" @click="$router.push({ path: '/roulette' })"></button>
         </div>
 
     </div>
