@@ -14,9 +14,10 @@
                 <DrinkItem v-for="alcohol in alcoholsList" :key="alcohol.id" :drink="alcohol" />
             </ul>
 
-            <button class="btn btn--big" @click="save">Save</button>
+            <transition name="fade" appear>
+                <button class="btn btn--big" @click="save">Save</button>
+            </transition>
         </div>
-
 
     </div>
 </template>
@@ -67,6 +68,14 @@
 </script>
 
 <style lang="scss" scoped>
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .4s;
+        transition-delay: 0.2s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
 
     h1{
         text-align: center;

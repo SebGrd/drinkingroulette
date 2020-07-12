@@ -182,8 +182,11 @@
 
             <canvas id="canvas" width="500" height="500"></canvas>
         </div>
+
         <div class="container">
-            <button class="btn btn--big" value="spin" id='spin'>Spin</button>
+            <transition name="fade" appear>
+                <button class="btn btn--big" value="spin" id='spin'>Spin</button>
+            </transition>
         </div>
 
 
@@ -218,9 +221,19 @@
 </script>
 
 <style lang="scss" scoped>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
+
 
     #roulette{
         margin-top: 20px;
+        canvas{
+            max-width: 100%;
+        }
     }
 
     #result-wrapper{
@@ -244,7 +257,8 @@
         width: 100%;
         box-shadow: 0 0 10px #cb5492;
         font-size: 36px;
-        font-weight: 400;
+        font-weight: 500;
         outline: none;
+        padding: 20px 15px;
     }
 </style>

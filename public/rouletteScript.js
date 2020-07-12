@@ -74,14 +74,14 @@ function drawRouletteWheel() {
         //Arrow
         ctx.fillStyle = "black";
         ctx.beginPath();
-        ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
-        ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
-        ctx.lineTo(250 + 4, 250 - (outsideRadius - 5));
-        ctx.lineTo(250 + 9, 250 - (outsideRadius - 5));
-        ctx.lineTo(250 + 0, 250 - (outsideRadius - 13));
-        ctx.lineTo(250 - 9, 250 - (outsideRadius - 5));
-        ctx.lineTo(250 - 4, 250 - (outsideRadius - 5));
-        ctx.lineTo(250 - 4, 250 - (outsideRadius + 5));
+        ctx.moveTo(250 - 4, 245 - (outsideRadius + 5));
+        ctx.lineTo(250 + 4, 245 - (outsideRadius + 5));
+        ctx.lineTo(250 + 4, 245 - (outsideRadius - 10));
+        ctx.lineTo(250 + 9, 245 - (outsideRadius - 10));
+        ctx.lineTo(250 + 0, 245 - (outsideRadius - 20));
+        ctx.lineTo(250 - 9, 245 - (outsideRadius - 10));
+        ctx.lineTo(250 - 4, 245 - (outsideRadius - 10));
+        ctx.lineTo(250 - 4, 245 - (outsideRadius + 5));
         ctx.fill();
     }
 }
