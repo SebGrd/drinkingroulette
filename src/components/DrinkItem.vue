@@ -5,7 +5,8 @@
             <button class="controls-edit">
                 <img src="../assets/pencil.png" alt="">
             </button>
-            <button class="controls-delete">
+            <button class="controls-delete"
+                    @click="$emit('delete-drink', drink.id)">
                 <img src="../assets/trash.png" alt="">
             </button>
         </span>
@@ -28,28 +29,33 @@
         border-radius: 50px;
         margin-bottom: 8px;
 
-        .name{
+        .name {
             font-weight: bold;
             font-size: 24px;
             padding: 4px 15px;
         }
-        .controls{
+
+        .controls {
             background: #cb5492;
             border-radius: 50px;
             padding: 4px 8px 4px 10px;
-            &-edit,&-delete{
+
+            &-edit, &-delete {
                 background: transparent;
                 border: none;
                 outline: none;
                 cursor: pointer;
-                img{
+
+                img {
                     width: 30px;
                 }
             }
-            &-edit{
+
+            &-edit {
                 margin-right: 6px;
             }
-            &-delete{
+
+            &-delete {
 
             }
         }

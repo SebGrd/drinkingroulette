@@ -7,11 +7,21 @@
             <AddDrink class="add-drink" :type="type" @add-alcohol="addAlcohol" @add-soft="addSoft"/>
 
             <ul v-if="type === 'soft'">
-                <DrinkItem v-for="soft in softsList" :key="soft.id" :drink="soft" />
+                <DrinkItem v-for="soft in softsList" :key="soft.id"
+                           :drink="soft"
+                @delete-drink="$emit('delete-drink', {
+                               type: 'soft',
+                               id: soft.id
+                           })"/>
             </ul>
 
             <ul v-if="type === 'alcohol'">
-                <DrinkItem v-for="alcohol in alcoholsList" :key="alcohol.id" :drink="alcohol" />
+                <DrinkItem v-for="alcohol in alcoholsList" :key="alcohol.id"
+                           :drink="alcohol"
+                           @delete-drink="$emit('delete-drink', {
+                               type: 'alcohol',
+                               id: alcohol.id
+                           })"/>
             </ul>
 
             <transition name="fade" appear>
@@ -53,7 +63,11 @@
         },
         computed: {
             pageTitle: function () {
-                return this.type.toUpperCase() + 'S'
+                if (this.type){
+                    return this.type.toUpperCase() + 'S'
+                } else{
+                    return 'Error'
+                }
             }
         },
         methods: {
