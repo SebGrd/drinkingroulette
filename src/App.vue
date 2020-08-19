@@ -14,7 +14,6 @@
                     :softs="softs" :alcohols="alcohols" :alcoholRate="alcoholRate"
                     @save-alcohols="saveAlcohols"
                     @save-softs="saveSofts"
-                    @delete-drink="deleteDrink"
             />
         </transition>
     </div>
@@ -40,16 +39,6 @@
                 localStorage.softs = JSON.stringify(softs)
                 this.softs = softs
             },
-            deleteDrink(obj){
-                if (obj.type === 'alcohol'){
-                    let index = this.alcohols.findIndex(alcohol => alcohol.id === obj.id)
-                    this.alcohols.splice(index, 1)
-                }
-                if (obj.type === 'soft'){
-                    let index = this.softs.findIndex(soft => soft.id === obj.id)
-                    this.alcohols.splice(index, 1)
-                }
-            }
         },
         mounted() {
             if (localStorage.alcohols) {
